@@ -4,50 +4,103 @@ import urllib.error
 import yaml
 import re
 import socket
+import json
 from concurrent.futures import ThreadPoolExecutor
 
 # ==================================================
-# НАСТРОЙКА СТРАН (1 - включено, 0 - выключено)
+# ОПЦИОНАЛЬНЫЕ ПРОВЕРКИ (1 - включено, 0 - выключено)
 # ==================================================
-COUNTRIES_CONFIG = {
-    "AU": 0,  # Australia
-    "BG": 0,  # Bulgaria
-    "CA": 0,  # Canada
-    "FI": 0,  # Finland
-    "FR": 1,  # France
-    "DE": 1,  # Germany
-    "HK": 0,  # Hong Kong
-    "IN": 0,  # India
-    "IE": 0,  # Ireland
-    "IT": 1,  # Italy
-    "JP": 0,  # Japan
-    "KR": 0,  # Korea
-    "LV": 0,  # Latvia
-    "NL": 1,  # Netherlands
-    "PK": 0,  # Pakistan
-    "PL": 1,  # Poland
-    "PT": 0,  # Portugal
-    "RO": 0,  # Romania
-    "RU": 0,  # Russia
-    "SG": 0,  # Singapore
-    "ES": 0,  # Spain
-    "SE": 0,  # Sweden
-    "CH": 0,  # Switzerland
-    "TW": 0,  # Taiwan
-    "TH": 0,  # Thailand
-    "TR": 0,  # Turkey
-    "GB": 0,  # United Kingdom
-    "US": 0,  # United States
-}
+CHECK_DUPLICATES = 1  # удаление дубликатов
+CHECK_PING = 0        # TCP‑проверка доступности узлов
 
+# ==================================================
+# ФИЛЬТРАЦИЯ СТРАН
+# ==================================================
+# 1. Если список НЕ пустой, скрипт возьмёт ТОЛЬКО эти страны (из числа доступных)
+INCLUDE_ONLY_COUNTRIES = []
+# 2. Список стран, которые нужно ВСЕГДА ИСКЛЮЧАТЬ (Укажите коды стран, которые не нужны)
+EXCLUDE_COUNTRIES = [
+    "AE",  # United Arab Emirates
+    "AR",  # Argentina
+    "BG",  # Bulgaria
+    "CA",  # Canada
+    "DK",  # Denmark
+    "EE",  # Estonia
+    "FI",  # Finland
+    "HK",  # Hong Kong
+    "IN",  # India
+    "JP",  # Japan
+    "KR",  # South Korea
+    "KZ",  # Kazakhstan
+    "LA",  # Laos
+    "RU",  # Russia
+    "SD",  # Sudan
+    "TW",  # Taiwan
+    "UA",  # Ukraine
+    "ZA",  # South Africa
+    "US"
+]
+
+GITHUB_TREE_URL = "https://api.github.com/repos/Au1rxx/free-vpn-subscriptions/git/trees/main?recursive=1"
 BASE_URL = "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/by-country/clash-{country_code}.yaml"
 PING_TIMEOUT = 3.0
+
+COUNTRY_NAMES = {
+    "AE": "United Arab Emirates", "AF": "Afghanistan", "AL": "Albania", "AR": "Argentina", 
+    "AT": "Austria", "AU": "Australia", "BA": "Bosnia and Herzegovina", "BD": "Bangladesh", 
+    "BE": "Belgium", "BG": "Bulgaria", "BR": "Brazil", "BY": "Belarus", "CA": "Canada", 
+    "CH": "Switzerland", "CL": "Chile", "CN": "China", "CO": "Colombia", "CY": "Cyprus", 
+    "CZ": "Czechia", "DE": "Germany", "DK": "Denmark", "DZ": "Algeria", "EE": "Estonia", 
+    "EG": "Egypt", "ES": "Spain", "FI": "Finland", "FR": "France", "GB": "United Kingdom", 
+    "GE": "Georgia", "GR": "Greece", "HK": "Hong Kong", "HR": "Croatia", "HU": "Hungary", 
+    "ID": "Indonesia", "IE": "Ireland", "IL": "Israel", "IN": "India", "IQ": "Iraq", 
+    "IR": "Iran", "IS": "Iceland", "IT": "Italy", "JP": "Japan", "KE": "Kenya", 
+    "KG": "Kyrgyzstan", "KR": "South Korea", "KZ": "Kazakhstan", "LA": "Laos", 
+    "LT": "Lithuania", "LU": "Luxembourg", "LV": "Latvia", "MD": "Moldova", 
+    "MK": "North Macedonia", "MM": "Myanmar", "MN": "Mongolia", "MX": "Mexico", 
+    "MY": "Malaysia", "NL": "Netherlands", "NO": "Norway", "NZ": "New Zealand", 
+    "PE": "Peru", "PH": "Philippines", "PK": "Pakistan", "PL": "Poland", "PT": "Portugal", 
+    "QA": "Qatar", "RO": "Romania", "RS": "Serbia", "RU": "Russia", "SA": "Saudi Arabia", 
+    "SD": "Sudan", "SE": "Sweden", "SG": "Singapore", "SI": "Slovenia", "SK": "Slovakia", 
+    "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan", "UA": "Ukraine", "US": "United States", 
+    "UZ": "Uzbekistan", "VN": "Vietnam", "YE": "Yemen", "ZA": "South Africa"
+}
+
+def get_country_name(code: str) -> str:
+    return COUNTRY_NAMES.get(code.upper(), "Unknown")
 
 def get_flag_emoji(country_code: str) -> str:
     code = country_code.upper()
     if len(code) != 2:
         return "🌐"
     return chr(127397 + ord(code[0])) + chr(127397 + ord(code[1]))
+
+def fetch_all_repo_countries() -> list[str]:
+    print("[*] Сканирование репозитория для поиска всех доступных стран...")
+    try:
+        req = urllib.request.Request(
+            GITHUB_TREE_URL, 
+            headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+        )
+        with urllib.request.urlopen(req, timeout=10) as response:
+            data = json.loads(response.read().decode('utf-8'))
+            
+            all_found = set()
+            pattern = re.compile(r"^output/by-country/clash-([a-z2-9]{2})\.yaml$", re.IGNORECASE)
+            
+            for item in data.get("tree", []):
+                path = item.get("path", "")
+                match = pattern.match(path)
+                if match:
+                    all_found.add(match.group(1).upper())
+
+            sorted_countries = sorted(list(all_found))
+            print(f"[+] Всего стран в репозитории: {len(sorted_countries)}")
+            return sorted_countries
+
+    except Exception as e:
+        print(f"[-] Ошибка при автоматическом получении списка стран: {e}")
+        return []
 
 def download_country_yaml(country_code: str) -> dict | None:
     code_upper = country_code.upper()
@@ -78,28 +131,40 @@ def check_proxy_worker(proxy: dict) -> dict | None:
     return None
 
 def main():
-    # Фильтруем только включенные страны
-    active_countries = [code for code, status in COUNTRIES_CONFIG.items() if status == 1]
+    all_repo_countries = fetch_all_repo_countries()
 
-    if not active_countries:
-        print(" ОШИБКА: Ни одна страна не включена в COUNTRIES_CONFIG!")
+    if not all_repo_countries:
+        print(" ОШИБКА: Не удалось получить список доступных стран!")
         sys.exit(1)
+
+    include_set = set(c.upper() for c in INCLUDE_ONLY_COUNTRIES)
+    exclude_set = set(c.upper() for c in EXCLUDE_COUNTRIES)
 
     raw_proxies = []
 
-    print("=" * 50)
+    print("\n" + "=" * 50)
     print(" 1. ЗАГРУЗКА ИСТОЧНИКОВ")
-    print(f" Активные страны: {', '.join(active_countries)}")
     print("=" * 50)
 
-    for code in active_countries:
+    for code in all_repo_countries:
+        c_name = get_country_name(code)
+        
+        # Проверка фильтров
+        if exclude_set and code in exclude_set:
+            print(f"[-] [{code}] → {c_name:<22}: Пропущена (исключена фильтром).")
+            continue
+        if include_set and code not in include_set:
+            print(f"[-] [{code}] → {c_name:<22}: Пропущена (не входит в INCLUDE_ONLY).")
+            continue
+
+        # Загрузка
         data = download_country_yaml(code)
         if not data or "proxies" not in data or not data["proxies"]:
-            print(f"[-] [{code}]: Не удалось получить узлы.")
+            print(f"[-] [{code}] → {c_name:<22}: Не удалось получить узлы.")
             continue
 
         count = len(data["proxies"])
-        print(f"[+] [{code}]: Загружено {count} узлов.")
+        print(f"[+] [{code}] → {c_name:<22}: Загружено {count} узлов.")
 
         flag = get_flag_emoji(code)
         for p in data["proxies"]:
@@ -112,16 +177,21 @@ def main():
         print("\n ОШИБКА: Не удалось получить ни одного прокси!")
         sys.exit(1)
 
+    # ==================================================
     # 2. Удаление дубликатов
-    unique_proxies = []
-    seen_endpoints = set()
-    for p in raw_proxies:
-        endpoint = (p.get("server"), p.get("port"), p.get("type"))
-        if endpoint not in seen_endpoints:
-            seen_endpoints.add(endpoint)
-            unique_proxies.append(p)
-
-    duplicates_removed = total_downloaded - len(unique_proxies)
+    # ==================================================
+    if CHECK_DUPLICATES:
+        unique_proxies = []
+        seen_endpoints = set()
+        for p in raw_proxies:
+            endpoint = (p.get("server"), p.get("port"), p.get("type"))
+            if endpoint not in seen_endpoints:
+                seen_endpoints.add(endpoint)
+                unique_proxies.append(p)
+        duplicates_removed = total_downloaded - len(unique_proxies)
+    else:
+        unique_proxies = raw_proxies[:]
+        duplicates_removed = 0
 
     print("\n" + "=" * 50)
     print(" 2. ПРОВЕРКА И ФИЛЬТРАЦИЯ")
@@ -129,23 +199,31 @@ def main():
     print(f"• Всего скачано:          {total_downloaded}")
     print(f"• Найдено дубликатов:      {duplicates_removed}")
     print(f"• Уникальных для проверки: {len(unique_proxies)}")
-    print(f"• Проверка доступности (таймаут {PING_TIMEOUT}сек)...")
 
+    # ==================================================
     # 3. Проверка пинга
-    alive_proxies = []
-    with ThreadPoolExecutor(max_workers=20) as executor:
-        results = executor.map(check_proxy_worker, unique_proxies)
-        for res in results:
-            if res:
-                alive_proxies.append(res)
+    # ==================================================
+    if CHECK_PING:
+        print(f"• Проверка доступности (таймаут {PING_TIMEOUT}сек)...")
+        alive_proxies = []
+        with ThreadPoolExecutor(max_workers=20) as executor:
+            results = executor.map(check_proxy_worker, unique_proxies)
+            for res in results:
+                if res:
+                    alive_proxies.append(res)
 
-    dead_nodes = len(unique_proxies) - len(alive_proxies)
+        dead_nodes = len(unique_proxies) - len(alive_proxies)
 
-    if not alive_proxies:
-        print("\n ВНИМАНИЕ: Ни один узел не ответил. Берём первые 20 без отсева.")
-        alive_proxies = unique_proxies[:20]
+        if not alive_proxies:
+            print("\n ВНИМАНИЕ: Ни один узел не ответил. Берём первые 20 без отсева.")
+            alive_proxies = unique_proxies[:20]
+    else:
+        alive_proxies = unique_proxies[:]
+        dead_nodes = 0
 
+    # ==================================================
     # 4. Формирование конфига
+    # ==================================================
     final_proxies = []
     proxy_names = []
 
