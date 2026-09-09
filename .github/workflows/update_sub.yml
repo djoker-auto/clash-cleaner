@@ -2,7 +2,8 @@ name: Auto Update Clash Subscription
 
 on:
   schedule:
-    - cron: '0 0,12 * * *'
+    # Запуск каждые 6 часов
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
