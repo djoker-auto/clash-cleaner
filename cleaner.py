@@ -267,8 +267,12 @@ def main():
         ]
     }
 
+    PROFILE_NAME = "Clash Filtered"
     output_filename = "clash-filtered.yaml"
+    
     with open(output_filename, "w", encoding="utf-8") as f:
+        f.write(f"# profile-title: {PROFILE_NAME}\n")
+        f.write("# profile-update-interval: 24\n\n")
         yaml.dump(final_config, f, allow_unicode=True, sort_keys=False)
 
     print("\n" + "=" * 50)
