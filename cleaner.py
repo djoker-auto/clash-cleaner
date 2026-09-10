@@ -20,25 +20,11 @@ CHECK_PING = 0        # TCP‑проверка доступности узлов
 INCLUDE_ONLY_COUNTRIES = []
 # 2. Список стран, которые нужно ВСЕГДА ИСКЛЮЧАТЬ (Укажите коды стран, которые не нужны)
 EXCLUDE_COUNTRIES = [
-    "AE",  # United Arab Emirates
-    "AR",  # Argentina
-    "BG",  # Bulgaria
-    "CA",  # Canada
-    "DK",  # Denmark
-    "EE",  # Estonia
-    "FI",  # Finland
-    "HK",  # Hong Kong
-    "IN",  # India
-    "JP",  # Japan
-    "KR",  # South Korea
-    "KZ",  # Kazakhstan
-    "LA",  # Laos
-    "RU",  # Russia
-    "SD",  # Sudan
-    "TW",  # Taiwan
-    "UA",  # Ukraine
-    "ZA",  # South Africa
-    "US"
+    "AE", "AR", "BG", "CA", "DK",
+    "EE", "FI", "HK", "IN", "JP",
+    "KR", "KZ", "LA", "RU", "SD",
+    "TR", "TW", "UA", "US", "ZA",
+    "RO"
 ]
 
 GITHUB_TREE_URL = "https://api.github.com/repos/Au1rxx/free-vpn-subscriptions/git/trees/main?recursive=1"
@@ -46,24 +32,29 @@ BASE_URL = "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main
 PING_TIMEOUT = 3.0
 
 COUNTRY_NAMES = {
-    "AE": "United Arab Emirates", "AF": "Afghanistan", "AL": "Albania", "AR": "Argentina", 
-    "AT": "Austria", "AU": "Australia", "BA": "Bosnia and Herzegovina", "BD": "Bangladesh", 
-    "BE": "Belgium", "BG": "Bulgaria", "BR": "Brazil", "BY": "Belarus", "CA": "Canada", 
-    "CH": "Switzerland", "CL": "Chile", "CN": "China", "CO": "Colombia", "CY": "Cyprus", 
-    "CZ": "Czechia", "DE": "Germany", "DK": "Denmark", "DZ": "Algeria", "EE": "Estonia", 
-    "EG": "Egypt", "ES": "Spain", "FI": "Finland", "FR": "France", "GB": "United Kingdom", 
-    "GE": "Georgia", "GR": "Greece", "HK": "Hong Kong", "HR": "Croatia", "HU": "Hungary", 
-    "ID": "Indonesia", "IE": "Ireland", "IL": "Israel", "IN": "India", "IQ": "Iraq", 
-    "IR": "Iran", "IS": "Iceland", "IT": "Italy", "JP": "Japan", "KE": "Kenya", 
-    "KG": "Kyrgyzstan", "KR": "South Korea", "KZ": "Kazakhstan", "LA": "Laos", 
-    "LT": "Lithuania", "LU": "Luxembourg", "LV": "Latvia", "MD": "Moldova", 
-    "MK": "North Macedonia", "MM": "Myanmar", "MN": "Mongolia", "MX": "Mexico", 
-    "MY": "Malaysia", "NL": "Netherlands", "NO": "Norway", "NZ": "New Zealand", 
-    "PE": "Peru", "PH": "Philippines", "PK": "Pakistan", "PL": "Poland", "PT": "Portugal", 
-    "QA": "Qatar", "RO": "Romania", "RS": "Serbia", "RU": "Russia", "SA": "Saudi Arabia", 
-    "SD": "Sudan", "SE": "Sweden", "SG": "Singapore", "SI": "Slovenia", "SK": "Slovakia", 
-    "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan", "UA": "Ukraine", "US": "United States", 
-    "UZ": "Uzbekistan", "VN": "Vietnam", "YE": "Yemen", "ZA": "South Africa"
+    "AE": "United Arab Emirates", "AF": "Afghanistan", "AL": "Albania", "AR": "Argentina", "AT": "Austria", "AU": "Australia",
+    "BA": "Bosnia and Herzegovina", "BD": "Bangladesh", "BE": "Belgium", "BG": "Bulgaria", "BR": "Brazil", "BY": "Belarus",
+    "CA": "Canada", "CH": "Switzerland", "CL": "Chile", "CN": "China", "CO": "Colombia", "CY": "Cyprus", "CZ": "Czechia",
+    "DE": "Germany", "DK": "Denmark", "DZ": "Algeria",
+    "EE": "Estonia", "EG": "Egypt", "ES": "Spain",
+    "FI": "Finland", "FR": "France",
+    "GB": "United Kingdom", "GE": "Georgia", "GR": "Greece",
+    "HK": "Hong Kong", "HR": "Croatia", "HU": "Hungary",
+    "ID": "Indonesia", "IE": "Ireland", "IL": "Israel", "IN": "India", "IQ": "Iraq", "IR": "Iran", "IS": "Iceland", "IT": "Italy",
+    "JP": "Japan",
+    "KE": "Kenya", "KG": "Kyrgyzstan", "KR": "South Korea", "KZ": "Kazakhstan",
+    "LA": "Laos", "LT": "Lithuania", "LU": "Luxembourg", "LV": "Latvia",
+    "MD": "Moldova", "MK": "North Macedonia", "MM": "Myanmar", "MN": "Mongolia", "MX": "Mexico", "MY": "Malaysia",
+    "NL": "Netherlands", "NO": "Norway", "NZ": "New Zealand",
+    "PE": "Peru", "PH": "Philippines", "PK": "Pakistan", "PL": "Poland", "PT": "Portugal",
+    "QA": "Qatar",
+    "RO": "Romania", "RS": "Serbia", "RU": "Russia",
+    "SA": "Saudi Arabia", "SD": "Sudan", "SE": "Sweden", "SG": "Singapore", "SI": "Slovenia", "SK": "Slovakia",
+    "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan",
+    "UA": "Ukraine", "US": "United States", "UZ": "Uzbekistan",
+    "VN": "Vietnam",
+    "YE": "Yemen",
+    "ZA": "South Africa"
 }
 
 def get_country_name(code: str) -> str:
