@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 # ==================================================
 CHECK_DUPLICATES = 1  # удаление дубликатов
 CHECK_PING = 0        # TCP‑проверка доступности узлов
+REMOVE_REALITY = 1     # 1 - удалять REALITY (для мобильных), 0 - оставлять (для ПК)
 
 # ==================================================
 # ФИЛЬТРАЦИЯ СТРАН
@@ -218,12 +219,12 @@ def main():
     # Отсеиваем REALITY узлы с short_id, вызывающие ошибку на мобильном клиенте
     filtered_alive_proxies = []
     for p in alive_proxies:
-        # Проверяем наличие ключа short_id / short-id в параметрах reality-opts или в самом прокси
         reality_opts = p.get("reality-opts", {})
         has_short_id = "short-id" in p or "short_id" in p or "short-id" in reality_opts or "short_id" in reality_opts
         
-        if p.get("type") == "vless" and has_short_id:
-            continue  # Пропускаем проблемные REALITY узлы
+        # ВАША СТРОКА С ПЕРЕКЛЮЧАТЕЛЕМ:
+        if REMOVE_REALITY and p.get("type") == "vless" and has_short_id:
+            continue
             
         filtered_alive_proxies.append(p)
 
