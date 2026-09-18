@@ -215,10 +215,22 @@ def main():
     # ==================================================
     # 4. Формирование конфига
     # ==================================================
+    # Отсеиваем REALITY узлы с short_id, вызывающие ошибку на мобильном клиенте
+    filtered_alive_proxies = []
+    for p in alive_proxies:
+        # Проверяем наличие ключа short_id / short-id в параметрах reality-opts или в самом прокси
+        reality_opts = p.get("reality-opts", {})
+        has_short_id = "short-id" in p or "short_id" in p or "short-id" in reality_opts or "short_id" in reality_opts
+        
+        if p.get("type") == "vless" and has_short_id:
+            continue  # Пропускаем проблемные REALITY узлы
+            
+        filtered_alive_proxies.append(p)
+
     final_proxies = []
     proxy_names = []
 
-    for idx, p in enumerate(alive_proxies, 1):
+    for idx, p in enumerate(filtered_alive_proxies, 1):
         code = p.pop("_country_code", "")
         flag = p.pop("_flag", "🌐")
         node_type = p.get("type", "node")
