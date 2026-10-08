@@ -29,107 +29,108 @@ proxies:
   skip-cert-verify: true
   sni: ''
   type: hysteria2
-- cipher: chacha20-ietf-poly1305
-  name: 🇨🇭 CH - ss 4
-  password: Wg_ISA3v29Gbagtoi_E_Bg
-  port: 1080
-  server: 185.167.234.118
-  type: ss
-  udp: true
+- name: 🇨🇭 CH - hysteria2 4
+  password: 84a506ca5aca505696a454d828420b3f
+  port: 50160
+  server: 140.238.213.114
+  skip-cert-verify: true
+  sni: 140.238.213.114
+  type: hysteria2
 - name: 🇨🇭 CH - hysteria2 5
   password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
   port: 8443
-  server: 82.38.64.235
+  server: 82.38.64.237
   skip-cert-verify: true
   sni: hopp-swizland-new.mysynology.net
   type: hysteria2
 - name: 🇨🇭 CH - hysteria2 6
   password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
   port: 8443
-  server: 82.38.64.239
-  skip-cert-verify: false
+  server: 82.38.64.235
+  skip-cert-verify: true
   sni: hopp-swizland-new.mysynology.net
   type: hysteria2
 - name: 🇨🇭 CH - hysteria2 7
-  password: 84a506ca5aca505696a454d828420b3f
-  port: 50160
-  server: 140.238.213.114
-  skip-cert-verify: true
-  sni: 'off'
-  type: hysteria2
-- name: 🇨🇭 CH - hysteria2 8
   password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
   port: 8443
-  server: 82.38.64.229
+  server: 82.38.64.239
   skip-cert-verify: true
   sni: hopp-swizland-new.mysynology.net
   type: hysteria2
-- cipher: chacha20-ietf-poly1305
-  name: 🇩🇪 DE - ss 9
-  password: PWpjPo3tqhPN4yRZ
-  port: 20001
-  server: 8.209.74.72
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇩🇪 DE - ss 10
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 213.202.208.199
-  type: ss
-  udp: true
-- name: 🇩🇪 DE - hysteria2 11
-  password: fc04RSUu3TfONQnlbKTwvA
-  port: 8443
-  server: 8.211.15.144
-  skip-cert-verify: true
-  sni: www.cloudflare.com
-  type: hysteria2
-- cipher: aes-256-gcm
-  name: 🇩🇪 DE - ss 12
-  password: XKFKl2rULjIp74
-  port: 8008
-  server: 185.226.172.8
-  type: ss
-  udp: true
-- cipher: rc4-md5
-  name: 🇩🇪 DE - ss 13
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 169.150.210.233
-  type: ss
-  udp: true
 - cipher: aes-256-cfb
-  name: 🇩🇪 DE - ss 14
+  name: 🇩🇪 DE - ss 8
   password: amazonskr05
   port: 443
   server: 3.67.197.81
   type: ss
   udp: true
 - cipher: aes-256-cfb
-  name: 🇩🇪 DE - ss 15
+  name: 🇩🇪 DE - ss 9
   password: amazonskr05
   port: 443
   server: 3.75.231.76
   type: ss
   udp: true
+- name: 🇩🇪 DE - hysteria2 10
+  password: 9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z
+  port: 8443
+  server: 162.249.126.39
+  skip-cert-verify: true
+  sni: hop-germany-september.dynuddns.com
+  type: hysteria2
+- cipher: aes-256-gcm
+  name: 🇩🇪 DE - ss 11
+  password: kKEd0rBrd56Furjz
+  port: 80
+  server: 2.58.81.221
+  type: ss
+  udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇩🇪 DE - ss 16
+  name: 🇩🇪 DE - ss 12
   password: 2YdE4lFOid5a
   port: 8388
   server: 51.195.126.38
   type: ss
   udp: true
-- name: 🇩🇪 DE - vless 17
-  network: tcp
-  port: 22849
-  server: 31.76.11.83
-  type: vless
+- cipher: aes-256-cfb
+  name: 🇩🇪 DE - ss 13
+  password: amazonskr05
+  port: 443
+  server: 18.184.136.175
+  type: ss
   udp: true
-  uuid: 2e511783-125c-466b-925d-a9cd1c98e30e
 - alterId: 0
   cipher: auto
-  name: 🇩🇪 DE - vmess 18
+  name: 🇩🇪 DE - vmess 14
+  network: tcp
+  port: 55969
+  server: 31.76.11.83
+  type: vmess
+  udp: true
+  uuid: 049a57b9-4913-4f9f-9cda-a861989ee59d
+- alterId: 0
+  cipher: auto
+  name: 🇩🇪 DE - vmess 15
+  network: tcp
+  port: 1234
+  server: 162.19.204.71
+  servername: supervpn.super.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+- name: 🇩🇪 DE - trojan 16
+  password: UX82473651
+  port: 443
+  server: meet-goshawk.rooster465.autos
+  skip-cert-verify: true
+  sni: meet-goshawk.rooster465.autos
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: none
+  name: 🇩🇪 DE - vmess 17
   network: tcp
   port: 1234
   server: 141.95.65.9
@@ -139,22 +140,72 @@ proxies:
   type: vmess
   udp: true
   uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+- name: 🇩🇪 DE - hysteria2 18
+  password: 9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z
+  port: 8443
+  server: 162.249.126.40
+  skip-cert-verify: false
+  sni: hop-germany-september.dynuddns.com
+  type: hysteria2
+- name: 🇩🇪 DE - trojan 19
+  password: pjg&JybcgFsca,+gQMa
+  port: 443
+  server: 188.114.97.3
+  skip-cert-verify: false
+  sni: 022xw1dmczg0c6165pcla6.tomborn69.workers.dev
+  type: trojan
+  udp: true
+- name: 🇩🇪 DE - trojan 20
+  password: UX82473651
+  port: 443
+  server: 63.178.198.94
+  skip-cert-verify: false
+  sni: pleased-albacore.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇩🇪 DE - vless 21
+  network: raw
+  port: 22849
+  server: 31.76.11.83
+  type: vless
+  udp: true
+  uuid: 2e511783-125c-466b-925d-a9cd1c98e30e
+- name: 🇩🇪 DE - vless 22
+  network: tcp
+  port: 2087
+  server: 13.143.172.203
+  servername: 13.143.172.203
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 88aefb0c-cdbf-489f-9e6b-9be5b5fd5a11
+- name: 🇩🇪 DE - hysteria2 23
+  password: 19f72087-4591-4d72-930b-2697078ec2be
+  port: 4433
+  server: de1.xiaoliyu.cyou
+  skip-cert-verify: true
+  sni: de1.xiaoliyu.cyou
+  type: hysteria2
 - cipher: chacha20-ietf-poly1305
-  name: 🇪🇸 ES - ss 19
+  name: 🇪🇸 ES - ss 24
   password: qItG8SueYQcP
   port: 8388
   server: 140.174.184.5
   type: ss
   udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇪🇸 ES - ss 20
-  password: WSyL4XTwNsdv
-  port: 8388
-  server: 108.181.121.226
-  type: ss
+- name: 🇪🇸 ES - vless 25
+  network: grpc
+  port: 443
+  server: assets-es.pleiades.codes
+  servername: ''
+  skip-cert-verify: false
+  tls: true
+  type: vless
   udp: true
+  uuid: e0b9fb0f-1bbd-478b-9580-c2294778338b
 - flow: xtls-rprx-vision
-  name: 🇪🇸 ES - vless 21
+  name: 🇪🇸 ES - vless 26
   network: tcp
   port: 443
   server: 154.62.226.101
@@ -164,40 +215,68 @@ proxies:
   type: vless
   udp: true
   uuid: 5b5e4cbf-2366-499a-8327-0cd9918c687d
-- name: 🇫🇷 FR - hysteria2 22
+- name: 🇫🇷 FR - hysteria2 27
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
-  server: 13.36.234.11
+  server: 13.38.44.64
   skip-cert-verify: true
-  sni: vpn-fr-001.fastervpn.world
+  sni: 13.38.44.64
   type: hysteria2
-- name: 🇫🇷 FR - hysteria2 23
-  password: github.com/Alvin9999-newpac/fanqiang
-  port: 60111
-  server: 62.210.7.139
-  skip-cert-verify: true
-  sni: ''
-  type: hysteria2
-- name: 🇫🇷 FR - hysteria2 24
+- name: 🇫🇷 FR - hysteria2 28
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: 51.44.167.227
   skip-cert-verify: true
   sni: vpn-fr-001.fastervpn.world
   type: hysteria2
+- name: 🇫🇷 FR - hysteria2 29
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: 13.36.234.11
+  skip-cert-verify: true
+  sni: vpn-fr-001.fastervpn.world
+  type: hysteria2
+- name: 🇫🇷 FR - hysteria2 30
+  password: github.com/Alvin9999-newpac/fanqiang
+  port: 60111
+  server: 62.210.7.139
+  skip-cert-verify: true
+  sni: 62.210.7.139
+  type: hysteria2
 - flow: xtls-rprx-vision
-  name: 🇫🇷 FR - vless 25
+  name: 🇫🇷 FR - vless 31
   network: tcp
   port: 443
   server: 51.255.166.202
   servername: e3k67dwms3-51255166202-direct.tavafog.com
-  skip-cert-verify: true
+  skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: 593bf46b-8316-5050-9357-d8a41e4db78b
+  uuid: e3k67dwms3
+- name: 🇫🇷 FR - hysteria2 32
+  password: github.com/Alvin9999-newpac/fanqiang
+  port: 43115
+  server: 62.210.147.2
+  skip-cert-verify: true
+  sni: www.microsoft.com
+  type: hysteria2
+- name: 🇫🇷 FR - hysteria2 33
+  password: gf1:gfhysteria2024
+  port: 443
+  server: 173.212.201.85
+  skip-cert-verify: true
+  sni: www.docker.com
+  type: hysteria2
+- name: 🇫🇷 FR - hysteria2 34
+  password: Krab9Hyst2_Rk7pQ2xL
+  port: 36723
+  server: 151.247.197.253
+  skip-cert-verify: true
+  sni: 'off'
+  type: hysteria2
 - flow: xtls-rprx-vision
-  name: 🇫🇷 FR - vless 26
+  name: 🇫🇷 FR - vless 35
   network: tcp
   port: 443
   server: e3k67dwms3-51255166202-direct.tavafog.com
@@ -207,91 +286,58 @@ proxies:
   type: vless
   udp: true
   uuid: e3k67dwms3
-- flow: xtls-rprx-vision
-  name: 🇫🇷 FR - vless 27
-  network: tcp
-  port: 443
-  server: tyxyrytyro-51255165170-direct.araghchy.com
-  servername: tyxyrytyro-51255165170-direct.araghchy.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
+- cipher: rc4-md5
+  name: 🇬🇧 GB - ss 36
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 146.70.23.32
+  type: ss
   udp: true
-  uuid: tyxyrytyro
+- cipher: aes-128-gcm
+  name: 🇬🇧 GB - ss 37
+  password: shadowsocks
+  port: 443
+  server: 141.98.101.181
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇬🇧 GB - ss 38
+  password: LXchLsIwtCeUAUgu
+  port: 443
+  server: 149.102.149.207
+  type: ss
+  udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇬🇧 GB - ss 28
+  name: 🇬🇧 GB - ss 39
   password: zRZNBszYyWo5
   port: 8388
   server: 51.77.225.200
   type: ss
   udp: true
 - cipher: aes-256-gcm
-  name: 🇬🇧 GB - ss 29
-  password: g5h5jleTRSyO3Rk4
-  port: 80
-  server: 149.102.132.184
-  type: ss
-  udp: true
-- cipher: rc4-md5
-  name: 🇬🇧 GB - ss 30
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 146.70.61.18
-  type: ss
-  udp: true
-- cipher: aes-128-gcm
-  name: 🇬🇧 GB - ss 31
-  password: shadowsocks
-  port: 443
-  server: 141.98.101.181
-  type: ss
-  udp: true
-- cipher: rc4-md5
-  name: 🇬🇧 GB - ss 32
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 146.70.61.37
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇬🇧 GB - ss 33
+  name: 🇬🇧 GB - ss 40
   password: LXchLsIwtCeUAUgu
   port: 80
   server: 149.102.149.207
   type: ss
   udp: true
-- cipher: aes-256-gcm
-  name: 🇬🇧 GB - ss 34
-  password: g5h5jleTRSyO3Rk4
+- name: 🇮🇪 IE - trojan 41
+  password: UX82473651
   port: 443
-  server: 149.102.132.184
-  type: ss
+  server: sacred-anemone.rooster465.autos
+  skip-cert-verify: false
+  sni: sacred-anemone.rooster465.autos
+  type: trojan
   udp: true
-- cipher: rc4-md5
-  name: 🇬🇧 GB - ss 35
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 146.70.23.32
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇬🇧 GB - ss 36
-  password: LXchLsIwtCeUAUgu
+- name: 🇮🇪 IE - trojan 42
+  password: UX82473651
   port: 443
-  server: 149.102.149.207
-  type: ss
-  udp: true
-- name: 🇬🇧 GB - vless 37
-  network: tcp
-  port: 443
-  server: 186.190.211.188
-  servername: 186.190.211.188
+  server: loved-shark.rooster465.autos
   skip-cert-verify: true
-  tls: true
-  type: vless
+  sni: ''
+  type: trojan
   udp: true
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-- name: 🇮🇪 IE - trojan 38
+- name: 🇮🇪 IE - trojan 43
   password: UX82473651
   port: 443
   server: 34.242.77.118
@@ -299,443 +345,505 @@ proxies:
   sni: sacred-anemone.rooster465.autos
   type: trojan
   udp: true
-- name: 🇮🇪 IE - trojan 39
+- name: 🇮🇪 IE - trojan 44
   password: UX82473651
   port: 443
-  server: sacred-anemone.rooster465.autos
+  server: 3.253.106.233
   skip-cert-verify: false
-  sni: ''
+  sni: loved-shark.rooster465.autos
   type: trojan
   udp: true
-- name: 🇮🇹 IT - vless 40
-  network: tcp
-  port: 10086
-  server: 204.216.216.23
-  type: vless
-  udp: true
-  uuid: 9f0285ee-20ca-4953-bcdb-86a920652923
 - cipher: aes-256-cfb
-  name: 🇱🇹 LT - ss 41
-  password: UkXRsXvR6buDMG2Y
-  port: 9001
-  server: 195.238.126.20
+  name: 🇮🇹 IT - ss 45
+  password: p5wSkb2uM3pKSS3j
+  port: 9074
+  server: 91.201.65.122
   type: ss
   udp: true
 - cipher: aes-256-cfb
-  name: 🇱🇹 LT - ss 42
-  password: mwgRg9hRq3b4Qnwb
-  port: 9068
+  name: 🇱🇹 LT - ss 46
+  password: xaupMUvhptwxdDUg
+  port: 9012
   server: 195.238.126.20
   type: ss
   udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 43
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.183
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 44
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.26
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 45
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.149
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 46
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.42
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 47
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.174
+- cipher: aes-128-gcm
+  name: 🇲🇽 MX - ss 47
+  password: 67c57ae584eecd70396fcd7ca7521130
+  port: 16672
+  server: 147.78.1.141
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 48
   password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 443
-  server: 82.38.31.170
+  port: 8080
+  server: 193.29.139.197
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 49
   password: oZIoA69Q8yhcQV8ka3Pa3A
   port: 8080
-  server: 193.29.139.179
+  server: 82.38.31.174
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 50
   password: k1dBOmOB4oqi7Ump37a1bQ
   port: 8080
-  server: 82.38.31.215
+  server: 82.38.31.191
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 51
-  password: k1dBOmOB4oqi7Ump37a1bQ
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   port: 8080
-  server: 82.38.31.185
+  server: 82.38.31.62
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 52
-  password: QCXDxuDlTTMD7jtgHUjIoj
-  port: 8080
-  server: 193.29.139.212
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 53
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 443
-  server: 82.38.31.175
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 54
   password: oZIoA69Q8yhcQV8ka3Pa3A
   port: 8080
   server: 82.38.31.48
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 55
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 193.29.139.202
-  type: ss
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 🇳🇱 NL - vmess 56
-  network: tcp
-  port: 1234
-  server: 159.223.13.109
-  servername: supervpn.super.com
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-- name: 🇳🇱 NL - hysteria2 57
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.106
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- cipher: aes-128-gcm
-  name: 🇳🇱 NL - ss 58
-  password: shadowsocks
-  port: 443
-  server: 158.173.20.208
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 59
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.216
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 60
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 443
-  server: 82.38.31.171
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 61
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.204
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 62
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.157
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 63
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.202
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 64
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.61
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 65
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.171
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 66
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.219
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 67
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 193.29.139.151
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 68
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.214
-  type: ss
-  udp: true
-- name: 🇳🇱 NL - hysteria2 69
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.107
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 70
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.200
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 71
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.203
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 72
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.2
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 73
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.39
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 74
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.205
-  type: ss
-  udp: true
-- name: 🇳🇱 NL - hysteria2 75
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.103
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- name: 🇳🇱 NL - hysteria2 76
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.101
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- name: 🇳🇱 NL - hysteria2 77
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.98
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 78
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  port: 8080
-  server: 82.38.31.199
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 79
+  name: 🇳🇱 NL - ss 53
   password: k1dBOmOB4oqi7Ump37a1bQ
   port: 8080
   server: 193.29.139.132
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 80
+  name: 🇳🇱 NL - ss 54
   password: oZIoA69Q8yhcQV8ka3Pa3A
   port: 8080
-  server: 82.38.31.7
+  server: 82.38.31.36
   type: ss
   udp: true
-- cipher: aes-128-cfb
-  name: 🇳🇱 NL - ss 81
-  password: shadowsocks
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 55
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.215
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 56
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.206
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 57
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   port: 443
-  server: 109.201.152.181
+  server: 193.29.139.235
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 82
-  password: 4a2rfixophdjffa8KVA4Aa
+  name: 🇳🇱 NL - ss 58
+  password: k1dBOmOB4oqi7Ump37a1bQ
   port: 8080
-  server: 193.29.139.234
+  server: 82.38.31.180
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 83
+  name: 🇳🇱 NL - ss 59
   password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.156
+  port: 443
+  server: 82.38.31.171
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 84
+  name: 🇳🇱 NL - ss 60
   password: k1dBOmOB4oqi7Ump37a1bQ
   port: 8080
   server: 193.29.139.198
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 61
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 193.29.139.179
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 62
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.216
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 63
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.193
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 64
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.162
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 65
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.159
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 66
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.155
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 67
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.28
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 68
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.26
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 69
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.170
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 70
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.189
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 71
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.42
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 72
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.204
+  type: ss
+  udp: true
+- name: 🇳🇱 NL - hysteria2 73
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 77.74.123.104
+  skip-cert-verify: false
+  sni: grape-test-italy.dynuddns.net
+  type: hysteria2
+- cipher: aes-128-gcm
+  name: 🇳🇱 NL - ss 74
+  password: 59ded1591b0b45f0b1e9361334c0f7d9
+  port: 18670
+  server: 185.212.171.202
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 75
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.9
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 76
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.16
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 77
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.202
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 78
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 193.29.139.151
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 79
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.183
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 80
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.39
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 81
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.175
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 82
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.175
+  type: ss
+  udp: true
+- name: 🇳🇱 NL - hysteria2 83
+  password: dd50a499-7e43-4589-8490-f3b9c2451473
+  port: 443
+  server: nl-hy-test.tcp-reset-club.net
+  skip-cert-verify: true
+  sni: tcp-reset-club.net
+  type: hysteria2
+- name: 🇳🇱 NL - hysteria2 84
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 77.74.123.101
+  skip-cert-verify: false
+  sni: grape-test-italy.dynuddns.net
+  type: hysteria2
+- cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 85
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.7
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 86
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.213
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 🇳🇱 NL - ss 87
+  password: shadowsocks
+  port: 443
+  server: 158.173.20.208
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 88
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.17
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 89
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.2
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 90
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.181
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 91
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.201
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 92
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.10
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 93
   password: oZIoA69Q8yhcQV8ka3Pa3A
   port: 8080
   server: 82.38.31.66
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 86
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.49
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 87
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 193.29.139.204
-  type: ss
-  udp: true
-- flow: xtls-rprx-vision
-  name: 🇳🇱 NL - vless 88
-  network: tcp
-  port: 443
-  server: 62.105.220.106
-  servername: u695098u7dae9c0cs220.gogocs.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-- alterId: 0
-  cipher: auto
-  name: 🇳🇱 NL - vmess 89
-  network: ws
-  port: 33736
-  server: 151.243.173.119
-  type: vmess
-  udp: true
-  uuid: b3a11068-1a7e-4643-85de-7c82cce46943
-- name: 🇳🇱 NL - hysteria2 90
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.104
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- name: 🇳🇱 NL - hysteria2 91
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.99
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- name: 🇳🇱 NL - hysteria2 92
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 77.74.123.100
-  skip-cert-verify: true
-  sni: grape-test-italy.dynuddns.net
-  type: hysteria2
-- cipher: chacha20-ietf-poly1305
-  name: 🇳🇱 NL - ss 93
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.69
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 94
-  password: CJmTCCx7Ltud
-  port: 8388
-  server: 108.181.126.122
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.3
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 95
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 443
-  server: 82.38.31.174
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.182
   type: ss
   udp: true
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱 NL - ss 96
   password: k1dBOmOB4oqi7Ump37a1bQ
   port: 8080
-  server: 82.38.31.193
+  server: 82.38.31.176
   type: ss
   udp: true
-- name: 🇵🇱 PL - vless 97
-  network: ws
-  port: 80
-  server: 70.34.252.154
-  type: vless
-  udp: true
-  uuid: d9c7ec1f-5aa3-469a-b860-760c686806b0
-- flow: xtls-rprx-vision
-  name: 🇵🇱 PL - vless 98
-  network: tcp
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 97
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   port: 443
-  server: 81.90.20.200
-  servername: pl.pupoe.sbs
-  skip-cert-verify: false
-  tls: true
-  type: vless
+  server: 82.38.31.174
+  type: ss
   udp: true
-  uuid: 51c14658-8873-4454-9383-c41fc80bde4b
-- name: 🇵🇱 PL - vless 99
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 98
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.194
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 99
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.208
+  type: ss
+  udp: true
+- name: 🇳🇱 NL - hysteria2 100
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 77.74.123.107
+  skip-cert-verify: true
+  sni: grape-test-italy.dynuddns.net
+  type: hysteria2
+- name: 🇳🇱 NL - hysteria2 101
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 77.74.123.106
+  skip-cert-verify: false
+  sni: grape-test-italy.dynuddns.net
+  type: hysteria2
+- name: 🇳🇱 NL - hysteria2 102
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 77.74.123.99
+  skip-cert-verify: true
+  sni: grape-test-italy.dynuddns.net
+  type: hysteria2
+- name: 🇳🇱 NL - hysteria2 103
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 77.74.123.102
+  skip-cert-verify: true
+  sni: grape-test-italy.dynuddns.net
+  type: hysteria2
+- name: 🇳🇱 NL - hysteria2 104
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 77.74.123.109
+  skip-cert-verify: false
+  sni: grape-test-italy.dynuddns.net
+  type: hysteria2
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 105
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 193.29.139.204
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 106
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.187
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 107
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.184
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 108
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 193.29.139.202
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 109
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.198
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 110
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.61
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 111
+  password: QCXDxuDlTTMD7jtgHUjIoj
+  port: 8080
+  server: 193.29.139.212
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱 NL - ss 112
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.199
+  type: ss
+  udp: true
+- name: 🇵🇱 PL - hysteria2 113
+  password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
+  port: 443
+  server: 45.192.12.93
+  skip-cert-verify: true
+  sni: admin.wwwinternetvideo.click
+  type: hysteria2
+- name: 🇵🇱 PL - hysteria2 114
+  password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
+  port: 443
+  server: admin.wwwinternetvideo.click
+  skip-cert-verify: true
+  sni: admin.wwwinternetvideo.click
+  type: hysteria2
+- name: 🇵🇱 PL - vless 115
   network: ws
   port: 80
   server: 70.34.255.101
@@ -743,30 +851,30 @@ proxies:
   udp: true
   uuid: a889262f-5fe3-4c93-9aaa-3721318dd389
 - cipher: rc4-md5
-  name: 🇸🇬 SG - ss 100
+  name: 🇸🇬 SG - ss 116
   password: 14fFPrbezE3HDZzsMOr6
   port: 8080
-  server: 128.199.172.224
+  server: 68.183.227.4
   type: ss
   udp: true
 - cipher: rc4-md5
-  name: 🇸🇬 SG - ss 101
+  name: 🇸🇬 SG - ss 117
   password: 14fFPrbezE3HDZzsMOr6
   port: 8080
   server: 68.183.227.45
   type: ss
   udp: true
 - cipher: rc4-md5
-  name: 🇸🇬 SG - ss 102
+  name: 🇸🇬 SG - ss 118
   password: 14fFPrbezE3HDZzsMOr6
   port: 8080
-  server: 68.183.235.122
+  server: 68.183.227.236
   type: ss
   udp: true
 - alterId: 0
   cipher: auto
-  name: 🇸🇬 SG - vmess 103
-  network: tcp
+  name: 🇸🇬 SG - vmess 119
+  network: raw
   port: 18000
   server: 149.88.23.202
   type: vmess
@@ -774,14 +882,88 @@ proxies:
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
 - alterId: 0
   cipher: auto
-  name: 🇸🇬 SG - vmess 104
+  name: 🇸🇬 SG - vmess 120
   network: raw
   port: 18000
   server: ww11.levikogjgfdd.ir
   type: vmess
   udp: true
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-- name: 🇸🇬 SG - vless 105
+- name: 🇸🇬 SG - hysteria2 121
+  password: f87376e17da040ed04c9665ce8972930
+  port: 50160
+  server: 138.2.73.238
+  skip-cert-verify: true
+  sni: 'off'
+  type: hysteria2
+- name: 🇸🇬 SG - trojan 122
+  password: UX82473651
+  port: 443
+  server: glowing-marmoset.rooster465.autos
+  skip-cert-verify: false
+  sni: glowing-marmoset.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - vless 123
+  network: ws
+  port: 8443
+  server: news.zoom.us
+  servername: asia.csmaster.site
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 799b1006-3255-4e36-8ea0-64fe24d2bfa7
+- alterId: 0
+  cipher: auto
+  name: 🇸🇬 SG - vmess 124
+  network: tcp
+  port: 18000
+  server: 149.88.23.207
+  type: vmess
+  udp: true
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- name: 🇸🇬 SG - trojan 125
+  password: UX82473651
+  port: 443
+  server: 56.10.9.77
+  skip-cert-verify: false
+  sni: inviting-ferret.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - trojan 126
+  password: UX82473651
+  port: 443
+  server: inviting-ferret.rooster465.autos
+  skip-cert-verify: false
+  sni: inviting-ferret.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - trojan 127
+  password: UX82473651
+  port: 443
+  server: 52.221.218.179
+  skip-cert-verify: true
+  sni: real-cardinal.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - trojan 128
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  port: 8886
+  server: 139.180.146.200
+  skip-cert-verify: true
+  sni: 139.180.146.200
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - trojan 129
+  password: UX82473651
+  port: 443
+  server: real-cardinal.rooster465.autos
+  skip-cert-verify: true
+  sni: real-cardinal.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - vless 130
   network: ws
   port: 8443
   server: asia.csmaster.site
@@ -791,49 +973,7 @@ proxies:
   type: vless
   udp: true
   uuid: 799b1006-3255-4e36-8ea0-64fe24d2bfa7
-- alterId: 0
-  cipher: auto
-  name: 🇸🇬 SG - vmess 106
-  network: tcp
-  port: 18000
-  server: 149.88.23.207
-  type: vmess
-  udp: true
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-- cipher: rc4-md5
-  name: 🇸🇬 SG - ss 107
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 68.183.227.236
-  type: ss
-  udp: true
-- name: 🇸🇬 SG - trojan 108
-  password: UX82473651
-  port: 443
-  server: glowing-marmoset.rooster465.autos
-  skip-cert-verify: true
-  sni: glowing-marmoset.rooster465.autos
-  type: trojan
-  udp: true
-- name: 🇸🇬 SG - trojan 109
-  password: UX82473651
-  port: 443
-  server: 52.221.218.179
-  skip-cert-verify: false
-  sni: real-cardinal.rooster465.autos
-  type: trojan
-  udp: true
-- name: 🇸🇬 SG - vless 110
-  network: ws
-  port: 443
-  server: asia.csmaster.site
-  servername: ''
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: a853e120-3570-462b-aec1-e8f3d4f92d24
-- name: 🇸🇬 SG - vless 111
+- name: 🇸🇬 SG - vless 131
   network: ws
   port: 443
   server: 170.114.52.22
@@ -843,52 +983,7 @@ proxies:
   type: vless
   udp: true
   uuid: a853e120-3570-462b-aec1-e8f3d4f92d24
-- name: 🇸🇬 SG - hysteria2 112
-  password: f87376e17da040ed04c9665ce8972930
-  port: 50160
-  server: 138.2.73.238
-  skip-cert-verify: true
-  sni: 138.2.73.238
-  type: hysteria2
-- name: 🇸🇬 SG - trojan 113
-  password: UX82473651
-  port: 443
-  server: pet-antelope.rooster465.autos
-  skip-cert-verify: true
-  sni: pet-antelope.rooster465.autos
-  type: trojan
-  udp: true
-- name: 🇸🇬 SG - hysteria2 114
-  password: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
-  port: 8443
-  server: 43.156.36.253
-  skip-cert-verify: true
-  sni: ''
-  type: hysteria2
-- cipher: rc4-md5
-  name: 🇸🇬 SG - ss 115
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 68.183.227.4
-  type: ss
-  udp: true
-- name: 🇸🇬 SG - trojan 116
-  password: UX82473651
-  port: 443
-  server: real-cardinal.rooster465.autos
-  skip-cert-verify: true
-  sni: real-cardinal.rooster465.autos
-  type: trojan
-  udp: true
-- name: 🇸🇬 SG - trojan 117
-  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
-  port: 8886
-  server: 139.180.146.200
-  skip-cert-verify: true
-  sni: 139.180.146.200
-  type: trojan
-  udp: true
-- name: 🇸🇬 SG - trojan 118
+- name: 🇸🇬 SG - trojan 132
   password: UX82473651
   port: 443
   server: holy-lamb.rooster465.autos
@@ -896,42 +991,91 @@ proxies:
   sni: holy-lamb.rooster465.autos
   type: trojan
   udp: true
-- name: 🇸🇬 SG - trojan 119
+- name: 🇸🇬 SG - trojan 133
+  password: UX82473651
+  port: 443
+  server: 52.221.220.227
+  skip-cert-verify: false
+  sni: pet-antelope.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - trojan 134
+  password: UX82473651
+  port: 443
+  server: pet-antelope.rooster465.autos
+  skip-cert-verify: false
+  sni: ''
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - trojan 135
+  password: UX82473651
+  port: 443
+  server: 13.212.81.3
+  skip-cert-verify: true
+  sni: holy-lamb.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - trojan 136
   password: UX82473651
   port: 443
   server: 18.143.92.167
-  skip-cert-verify: false
+  skip-cert-verify: true
   sni: glowing-marmoset.rooster465.autos
   type: trojan
   udp: true
-- name: 🇸🇬 SG - vless 120
-  network: tcp
-  port: 49289
-  server: 129.150.51.127
-  servername: www.microsoft.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 0590ab38-cb22-41d3-8312-6f396a5cec58
-- name: 🇸🇬 SG - vless 121
-  network: ws
-  port: 2082
-  server: 172.64.150.28
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-- name: 🇸🇬 SG - vless 122
-  network: tcp
+- name: 🇸🇬 SG - trojan 137
+  password: UX82473651
   port: 443
-  server: 139.162.27.96
-  servername: aka.ms
+  server: pretty-rat.rooster465.autos
+  skip-cert-verify: false
+  sni: pretty-rat.rooster465.autos
+  type: trojan
+  udp: true
+- name: 🇸🇬 SG - vless 138
+  network: ws
+  port: 443
+  server: asia.csmaster.site
+  servername: ''
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: f1178fbe-1420-4eef-b087-4f33b32b4a19
-- name: 🇸🇬 SG - vless 123
+  uuid: a853e120-3570-462b-aec1-e8f3d4f92d24
+- name: 🇸🇬 SG - hysteria2 139
+  password: 6ddb6a68-d5f5-ca30-3943-cf0c9876d50c
+  port: 443
+  server: 2faf2989-tmveo0-u6l8xy-g43g.sg7.hyhuawei.com
+  skip-cert-verify: true
+  sni: 2faf2989-tmveo0-u6l8xy-g43g.sg7.hyhuawei.com
+  type: hysteria2
+- cipher: rc4-md5
+  name: 🇸🇬 SG - ss 140
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 128.199.172.224
+  type: ss
+  udp: true
+- name: 🇸🇬 SG - vless 141
+  network: ws
+  port: 443
+  server: free.nadun.store
+  servername: ''
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
+- name: 🇸🇬 SG - vless 142
+  network: ws
+  port: 443
+  server: 45.136.12.21
+  servername: asia.csmaster.site
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: a853e120-3570-462b-aec1-e8f3d4f92d24
+- name: 🇸🇬 SG - vless 143
   network: ws
   port: 2096
   server: 173.234.14.85
@@ -941,62 +1085,35 @@ proxies:
   type: vless
   udp: true
   uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-- name: 🇸🇬 SG - hysteria2 124
-  password: 6ddb6a68-d5f5-ca30-3943-cf0c9876d50c
+- name: 🇸🇬 SG - trojan 144
+  password: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
   port: 443
-  server: 2faf2989-tmveo0-u6l8xy-g43g.sg7.hyhuawei.com
+  server: 43.156.36.253
   skip-cert-verify: true
-  sni: 2faf2989-tmveo0-u6l8xy-g43g.sg7.hyhuawei.com
-  type: hysteria2
-- name: 🇸🇬 SG - trojan 125
-  password: UX82473651
-  port: 443
-  server: 13.212.81.3
-  skip-cert-verify: false
-  sni: holy-lamb.rooster465.autos
+  sni: tx-hy2
   type: trojan
   udp: true
-- name: 🇸🇬 SG - trojan 126
-  password: UX82473651
-  port: 443
-  server: 56.10.9.77
-  skip-cert-verify: false
-  sni: inviting-ferret.rooster465.autos
-  type: trojan
-  udp: true
-- name: 🇸🇬 SG - vless 127
+- name: 🇸🇬 SG - vless 145
   network: ws
-  port: 80
-  server: support.zoom.us
-  type: vless
-  udp: true
-  uuid: 9b0025a3-3a36-4915-b4e1-89c5cd65c9cb
-- name: 🇸🇬 SG - vless 128
-  network: raw
-  port: 16263
-  server: 47.237.74.17
-  type: vless
-  udp: true
-  uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
-- name: 🇸🇬 SG - trojan 129
-  password: UX82473651
   port: 443
-  server: 52.221.220.227
-  skip-cert-verify: false
-  sni: pet-antelope.rooster465.autos
-  type: trojan
-  udp: true
-- name: 🇸🇬 SG - vless 130
-  network: ws
-  port: 2096
-  server: 139.162.27.96
-  servername: free-server.techsonic.dev
+  server: 103.25.202.102
+  servername: asia.csmaster.site
   skip-cert-verify: false
   tls: true
   type: vless
   udp: true
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-- name: 🇸🇬 SG - vless 131
+  uuid: a853e120-3570-462b-aec1-e8f3d4f92d24
+- name: 🇸🇬 SG - vless 146
+  network: tcp
+  port: 49289
+  server: 129.150.51.127
+  servername: www.microsoft.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0590ab38-cb22-41d3-8312-6f396a5cec58
+- name: 🇸🇬 SG - vless 147
   network: ws
   port: 8443
   server: support.zoom.us
@@ -1006,16 +1123,23 @@ proxies:
   type: vless
   udp: true
   uuid: ba9ba1d3-19c8-4792-9d3f-ddd2cdcc2e65
-- name: 🇸🇬 SG - hysteria2 132
-  password: user317_windows:c70565e9-a99f-40ef-b96c-469a3949eed2
-  port: 18642
-  server: s3.huhiuh.space
+- name: 🇸🇬 SG - hysteria2 148
+  password: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
+  port: 8443
+  server: 43.156.36.253
   skip-cert-verify: true
-  sni: www.bing.com
+  sni: ''
   type: hysteria2
+- cipher: aes-256-gcm
+  name: 🇹🇭 TH - ss 149
+  password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
+  port: 52351
+  server: 103.107.52.106
+  type: ss
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 🇹🇭 TH - vmess 133
+  name: 🇹🇭 TH - vmess 150
   network: none
   port: 37515
   server: 119.46.51.45
@@ -1023,10 +1147,10 @@ proxies:
   udp: true
   uuid: 9b76bc31-17a5-4454-934a-8d5fb602cd70
 - cipher: aes-256-gcm
-  name: 🇹🇭 TH - ss 134
+  name: 🇹🇭 TH - ss 151
   password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
   port: 52351
-  server: 103.107.52.106
+  server: pphfree2.mvpnpvpn.de5.net
   type: ss
   udp: true
 proxy-groups:
@@ -1037,50 +1161,50 @@ proxy-groups:
   - 🇦🇱 AL - ss 1
   - 🇦🇹 AT - ss 2
   - 🇦🇺 AU - hysteria2 3
-  - 🇨🇭 CH - ss 4
+  - 🇨🇭 CH - hysteria2 4
   - 🇨🇭 CH - hysteria2 5
   - 🇨🇭 CH - hysteria2 6
   - 🇨🇭 CH - hysteria2 7
-  - 🇨🇭 CH - hysteria2 8
+  - 🇩🇪 DE - ss 8
   - 🇩🇪 DE - ss 9
-  - 🇩🇪 DE - ss 10
-  - 🇩🇪 DE - hysteria2 11
+  - 🇩🇪 DE - hysteria2 10
+  - 🇩🇪 DE - ss 11
   - 🇩🇪 DE - ss 12
   - 🇩🇪 DE - ss 13
-  - 🇩🇪 DE - ss 14
-  - 🇩🇪 DE - ss 15
-  - 🇩🇪 DE - ss 16
-  - 🇩🇪 DE - vless 17
-  - 🇩🇪 DE - vmess 18
-  - 🇪🇸 ES - ss 19
-  - 🇪🇸 ES - ss 20
-  - 🇪🇸 ES - vless 21
-  - 🇫🇷 FR - hysteria2 22
-  - 🇫🇷 FR - hysteria2 23
-  - 🇫🇷 FR - hysteria2 24
-  - 🇫🇷 FR - vless 25
-  - 🇫🇷 FR - vless 26
-  - 🇫🇷 FR - vless 27
-  - 🇬🇧 GB - ss 28
-  - 🇬🇧 GB - ss 29
-  - 🇬🇧 GB - ss 30
-  - 🇬🇧 GB - ss 31
-  - 🇬🇧 GB - ss 32
-  - 🇬🇧 GB - ss 33
-  - 🇬🇧 GB - ss 34
-  - 🇬🇧 GB - ss 35
+  - 🇩🇪 DE - vmess 14
+  - 🇩🇪 DE - vmess 15
+  - 🇩🇪 DE - trojan 16
+  - 🇩🇪 DE - vmess 17
+  - 🇩🇪 DE - hysteria2 18
+  - 🇩🇪 DE - trojan 19
+  - 🇩🇪 DE - trojan 20
+  - 🇩🇪 DE - vless 21
+  - 🇩🇪 DE - vless 22
+  - 🇩🇪 DE - hysteria2 23
+  - 🇪🇸 ES - ss 24
+  - 🇪🇸 ES - vless 25
+  - 🇪🇸 ES - vless 26
+  - 🇫🇷 FR - hysteria2 27
+  - 🇫🇷 FR - hysteria2 28
+  - 🇫🇷 FR - hysteria2 29
+  - 🇫🇷 FR - hysteria2 30
+  - 🇫🇷 FR - vless 31
+  - 🇫🇷 FR - hysteria2 32
+  - 🇫🇷 FR - hysteria2 33
+  - 🇫🇷 FR - hysteria2 34
+  - 🇫🇷 FR - vless 35
   - 🇬🇧 GB - ss 36
-  - 🇬🇧 GB - vless 37
-  - 🇮🇪 IE - trojan 38
-  - 🇮🇪 IE - trojan 39
-  - 🇮🇹 IT - vless 40
-  - 🇱🇹 LT - ss 41
-  - 🇱🇹 LT - ss 42
-  - 🇳🇱 NL - ss 43
-  - 🇳🇱 NL - ss 44
-  - 🇳🇱 NL - ss 45
-  - 🇳🇱 NL - ss 46
-  - 🇳🇱 NL - ss 47
+  - 🇬🇧 GB - ss 37
+  - 🇬🇧 GB - ss 38
+  - 🇬🇧 GB - ss 39
+  - 🇬🇧 GB - ss 40
+  - 🇮🇪 IE - trojan 41
+  - 🇮🇪 IE - trojan 42
+  - 🇮🇪 IE - trojan 43
+  - 🇮🇪 IE - trojan 44
+  - 🇮🇹 IT - ss 45
+  - 🇱🇹 LT - ss 46
+  - 🇲🇽 MX - ss 47
   - 🇳🇱 NL - ss 48
   - 🇳🇱 NL - ss 49
   - 🇳🇱 NL - ss 50
@@ -1089,8 +1213,8 @@ proxy-groups:
   - 🇳🇱 NL - ss 53
   - 🇳🇱 NL - ss 54
   - 🇳🇱 NL - ss 55
-  - 🇳🇱 NL - vmess 56
-  - 🇳🇱 NL - hysteria2 57
+  - 🇳🇱 NL - ss 56
+  - 🇳🇱 NL - ss 57
   - 🇳🇱 NL - ss 58
   - 🇳🇱 NL - ss 59
   - 🇳🇱 NL - ss 60
@@ -1102,72 +1226,89 @@ proxy-groups:
   - 🇳🇱 NL - ss 66
   - 🇳🇱 NL - ss 67
   - 🇳🇱 NL - ss 68
-  - 🇳🇱 NL - hysteria2 69
+  - 🇳🇱 NL - ss 69
   - 🇳🇱 NL - ss 70
   - 🇳🇱 NL - ss 71
   - 🇳🇱 NL - ss 72
-  - 🇳🇱 NL - ss 73
+  - 🇳🇱 NL - hysteria2 73
   - 🇳🇱 NL - ss 74
-  - 🇳🇱 NL - hysteria2 75
-  - 🇳🇱 NL - hysteria2 76
-  - 🇳🇱 NL - hysteria2 77
+  - 🇳🇱 NL - ss 75
+  - 🇳🇱 NL - ss 76
+  - 🇳🇱 NL - ss 77
   - 🇳🇱 NL - ss 78
   - 🇳🇱 NL - ss 79
   - 🇳🇱 NL - ss 80
   - 🇳🇱 NL - ss 81
   - 🇳🇱 NL - ss 82
-  - 🇳🇱 NL - ss 83
-  - 🇳🇱 NL - ss 84
+  - 🇳🇱 NL - hysteria2 83
+  - 🇳🇱 NL - hysteria2 84
   - 🇳🇱 NL - ss 85
   - 🇳🇱 NL - ss 86
   - 🇳🇱 NL - ss 87
-  - 🇳🇱 NL - vless 88
-  - 🇳🇱 NL - vmess 89
-  - 🇳🇱 NL - hysteria2 90
-  - 🇳🇱 NL - hysteria2 91
-  - 🇳🇱 NL - hysteria2 92
+  - 🇳🇱 NL - ss 88
+  - 🇳🇱 NL - ss 89
+  - 🇳🇱 NL - ss 90
+  - 🇳🇱 NL - ss 91
+  - 🇳🇱 NL - ss 92
   - 🇳🇱 NL - ss 93
   - 🇳🇱 NL - ss 94
   - 🇳🇱 NL - ss 95
   - 🇳🇱 NL - ss 96
-  - 🇵🇱 PL - vless 97
-  - 🇵🇱 PL - vless 98
-  - 🇵🇱 PL - vless 99
-  - 🇸🇬 SG - ss 100
-  - 🇸🇬 SG - ss 101
-  - 🇸🇬 SG - ss 102
-  - 🇸🇬 SG - vmess 103
-  - 🇸🇬 SG - vmess 104
-  - 🇸🇬 SG - vless 105
-  - 🇸🇬 SG - vmess 106
-  - 🇸🇬 SG - ss 107
-  - 🇸🇬 SG - trojan 108
-  - 🇸🇬 SG - trojan 109
-  - 🇸🇬 SG - vless 110
-  - 🇸🇬 SG - vless 111
-  - 🇸🇬 SG - hysteria2 112
-  - 🇸🇬 SG - trojan 113
-  - 🇸🇬 SG - hysteria2 114
-  - 🇸🇬 SG - ss 115
-  - 🇸🇬 SG - trojan 116
-  - 🇸🇬 SG - trojan 117
-  - 🇸🇬 SG - trojan 118
-  - 🇸🇬 SG - trojan 119
-  - 🇸🇬 SG - vless 120
-  - 🇸🇬 SG - vless 121
-  - 🇸🇬 SG - vless 122
+  - 🇳🇱 NL - ss 97
+  - 🇳🇱 NL - ss 98
+  - 🇳🇱 NL - ss 99
+  - 🇳🇱 NL - hysteria2 100
+  - 🇳🇱 NL - hysteria2 101
+  - 🇳🇱 NL - hysteria2 102
+  - 🇳🇱 NL - hysteria2 103
+  - 🇳🇱 NL - hysteria2 104
+  - 🇳🇱 NL - ss 105
+  - 🇳🇱 NL - ss 106
+  - 🇳🇱 NL - ss 107
+  - 🇳🇱 NL - ss 108
+  - 🇳🇱 NL - ss 109
+  - 🇳🇱 NL - ss 110
+  - 🇳🇱 NL - ss 111
+  - 🇳🇱 NL - ss 112
+  - 🇵🇱 PL - hysteria2 113
+  - 🇵🇱 PL - hysteria2 114
+  - 🇵🇱 PL - vless 115
+  - 🇸🇬 SG - ss 116
+  - 🇸🇬 SG - ss 117
+  - 🇸🇬 SG - ss 118
+  - 🇸🇬 SG - vmess 119
+  - 🇸🇬 SG - vmess 120
+  - 🇸🇬 SG - hysteria2 121
+  - 🇸🇬 SG - trojan 122
   - 🇸🇬 SG - vless 123
-  - 🇸🇬 SG - hysteria2 124
+  - 🇸🇬 SG - vmess 124
   - 🇸🇬 SG - trojan 125
   - 🇸🇬 SG - trojan 126
-  - 🇸🇬 SG - vless 127
-  - 🇸🇬 SG - vless 128
+  - 🇸🇬 SG - trojan 127
+  - 🇸🇬 SG - trojan 128
   - 🇸🇬 SG - trojan 129
   - 🇸🇬 SG - vless 130
   - 🇸🇬 SG - vless 131
-  - 🇸🇬 SG - hysteria2 132
-  - 🇹🇭 TH - vmess 133
-  - 🇹🇭 TH - ss 134
+  - 🇸🇬 SG - trojan 132
+  - 🇸🇬 SG - trojan 133
+  - 🇸🇬 SG - trojan 134
+  - 🇸🇬 SG - trojan 135
+  - 🇸🇬 SG - trojan 136
+  - 🇸🇬 SG - trojan 137
+  - 🇸🇬 SG - vless 138
+  - 🇸🇬 SG - hysteria2 139
+  - 🇸🇬 SG - ss 140
+  - 🇸🇬 SG - vless 141
+  - 🇸🇬 SG - vless 142
+  - 🇸🇬 SG - vless 143
+  - 🇸🇬 SG - trojan 144
+  - 🇸🇬 SG - vless 145
+  - 🇸🇬 SG - vless 146
+  - 🇸🇬 SG - vless 147
+  - 🇸🇬 SG - hysteria2 148
+  - 🇹🇭 TH - ss 149
+  - 🇹🇭 TH - vmess 150
+  - 🇹🇭 TH - ss 151
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1177,50 +1318,50 @@ proxy-groups:
   - 🇦🇱 AL - ss 1
   - 🇦🇹 AT - ss 2
   - 🇦🇺 AU - hysteria2 3
-  - 🇨🇭 CH - ss 4
+  - 🇨🇭 CH - hysteria2 4
   - 🇨🇭 CH - hysteria2 5
   - 🇨🇭 CH - hysteria2 6
   - 🇨🇭 CH - hysteria2 7
-  - 🇨🇭 CH - hysteria2 8
+  - 🇩🇪 DE - ss 8
   - 🇩🇪 DE - ss 9
-  - 🇩🇪 DE - ss 10
-  - 🇩🇪 DE - hysteria2 11
+  - 🇩🇪 DE - hysteria2 10
+  - 🇩🇪 DE - ss 11
   - 🇩🇪 DE - ss 12
   - 🇩🇪 DE - ss 13
-  - 🇩🇪 DE - ss 14
-  - 🇩🇪 DE - ss 15
-  - 🇩🇪 DE - ss 16
-  - 🇩🇪 DE - vless 17
-  - 🇩🇪 DE - vmess 18
-  - 🇪🇸 ES - ss 19
-  - 🇪🇸 ES - ss 20
-  - 🇪🇸 ES - vless 21
-  - 🇫🇷 FR - hysteria2 22
-  - 🇫🇷 FR - hysteria2 23
-  - 🇫🇷 FR - hysteria2 24
-  - 🇫🇷 FR - vless 25
-  - 🇫🇷 FR - vless 26
-  - 🇫🇷 FR - vless 27
-  - 🇬🇧 GB - ss 28
-  - 🇬🇧 GB - ss 29
-  - 🇬🇧 GB - ss 30
-  - 🇬🇧 GB - ss 31
-  - 🇬🇧 GB - ss 32
-  - 🇬🇧 GB - ss 33
-  - 🇬🇧 GB - ss 34
-  - 🇬🇧 GB - ss 35
+  - 🇩🇪 DE - vmess 14
+  - 🇩🇪 DE - vmess 15
+  - 🇩🇪 DE - trojan 16
+  - 🇩🇪 DE - vmess 17
+  - 🇩🇪 DE - hysteria2 18
+  - 🇩🇪 DE - trojan 19
+  - 🇩🇪 DE - trojan 20
+  - 🇩🇪 DE - vless 21
+  - 🇩🇪 DE - vless 22
+  - 🇩🇪 DE - hysteria2 23
+  - 🇪🇸 ES - ss 24
+  - 🇪🇸 ES - vless 25
+  - 🇪🇸 ES - vless 26
+  - 🇫🇷 FR - hysteria2 27
+  - 🇫🇷 FR - hysteria2 28
+  - 🇫🇷 FR - hysteria2 29
+  - 🇫🇷 FR - hysteria2 30
+  - 🇫🇷 FR - vless 31
+  - 🇫🇷 FR - hysteria2 32
+  - 🇫🇷 FR - hysteria2 33
+  - 🇫🇷 FR - hysteria2 34
+  - 🇫🇷 FR - vless 35
   - 🇬🇧 GB - ss 36
-  - 🇬🇧 GB - vless 37
-  - 🇮🇪 IE - trojan 38
-  - 🇮🇪 IE - trojan 39
-  - 🇮🇹 IT - vless 40
-  - 🇱🇹 LT - ss 41
-  - 🇱🇹 LT - ss 42
-  - 🇳🇱 NL - ss 43
-  - 🇳🇱 NL - ss 44
-  - 🇳🇱 NL - ss 45
-  - 🇳🇱 NL - ss 46
-  - 🇳🇱 NL - ss 47
+  - 🇬🇧 GB - ss 37
+  - 🇬🇧 GB - ss 38
+  - 🇬🇧 GB - ss 39
+  - 🇬🇧 GB - ss 40
+  - 🇮🇪 IE - trojan 41
+  - 🇮🇪 IE - trojan 42
+  - 🇮🇪 IE - trojan 43
+  - 🇮🇪 IE - trojan 44
+  - 🇮🇹 IT - ss 45
+  - 🇱🇹 LT - ss 46
+  - 🇲🇽 MX - ss 47
   - 🇳🇱 NL - ss 48
   - 🇳🇱 NL - ss 49
   - 🇳🇱 NL - ss 50
@@ -1229,8 +1370,8 @@ proxy-groups:
   - 🇳🇱 NL - ss 53
   - 🇳🇱 NL - ss 54
   - 🇳🇱 NL - ss 55
-  - 🇳🇱 NL - vmess 56
-  - 🇳🇱 NL - hysteria2 57
+  - 🇳🇱 NL - ss 56
+  - 🇳🇱 NL - ss 57
   - 🇳🇱 NL - ss 58
   - 🇳🇱 NL - ss 59
   - 🇳🇱 NL - ss 60
@@ -1242,72 +1383,89 @@ proxy-groups:
   - 🇳🇱 NL - ss 66
   - 🇳🇱 NL - ss 67
   - 🇳🇱 NL - ss 68
-  - 🇳🇱 NL - hysteria2 69
+  - 🇳🇱 NL - ss 69
   - 🇳🇱 NL - ss 70
   - 🇳🇱 NL - ss 71
   - 🇳🇱 NL - ss 72
-  - 🇳🇱 NL - ss 73
+  - 🇳🇱 NL - hysteria2 73
   - 🇳🇱 NL - ss 74
-  - 🇳🇱 NL - hysteria2 75
-  - 🇳🇱 NL - hysteria2 76
-  - 🇳🇱 NL - hysteria2 77
+  - 🇳🇱 NL - ss 75
+  - 🇳🇱 NL - ss 76
+  - 🇳🇱 NL - ss 77
   - 🇳🇱 NL - ss 78
   - 🇳🇱 NL - ss 79
   - 🇳🇱 NL - ss 80
   - 🇳🇱 NL - ss 81
   - 🇳🇱 NL - ss 82
-  - 🇳🇱 NL - ss 83
-  - 🇳🇱 NL - ss 84
+  - 🇳🇱 NL - hysteria2 83
+  - 🇳🇱 NL - hysteria2 84
   - 🇳🇱 NL - ss 85
   - 🇳🇱 NL - ss 86
   - 🇳🇱 NL - ss 87
-  - 🇳🇱 NL - vless 88
-  - 🇳🇱 NL - vmess 89
-  - 🇳🇱 NL - hysteria2 90
-  - 🇳🇱 NL - hysteria2 91
-  - 🇳🇱 NL - hysteria2 92
+  - 🇳🇱 NL - ss 88
+  - 🇳🇱 NL - ss 89
+  - 🇳🇱 NL - ss 90
+  - 🇳🇱 NL - ss 91
+  - 🇳🇱 NL - ss 92
   - 🇳🇱 NL - ss 93
   - 🇳🇱 NL - ss 94
   - 🇳🇱 NL - ss 95
   - 🇳🇱 NL - ss 96
-  - 🇵🇱 PL - vless 97
-  - 🇵🇱 PL - vless 98
-  - 🇵🇱 PL - vless 99
-  - 🇸🇬 SG - ss 100
-  - 🇸🇬 SG - ss 101
-  - 🇸🇬 SG - ss 102
-  - 🇸🇬 SG - vmess 103
-  - 🇸🇬 SG - vmess 104
-  - 🇸🇬 SG - vless 105
-  - 🇸🇬 SG - vmess 106
-  - 🇸🇬 SG - ss 107
-  - 🇸🇬 SG - trojan 108
-  - 🇸🇬 SG - trojan 109
-  - 🇸🇬 SG - vless 110
-  - 🇸🇬 SG - vless 111
-  - 🇸🇬 SG - hysteria2 112
-  - 🇸🇬 SG - trojan 113
-  - 🇸🇬 SG - hysteria2 114
-  - 🇸🇬 SG - ss 115
-  - 🇸🇬 SG - trojan 116
-  - 🇸🇬 SG - trojan 117
-  - 🇸🇬 SG - trojan 118
-  - 🇸🇬 SG - trojan 119
-  - 🇸🇬 SG - vless 120
-  - 🇸🇬 SG - vless 121
-  - 🇸🇬 SG - vless 122
+  - 🇳🇱 NL - ss 97
+  - 🇳🇱 NL - ss 98
+  - 🇳🇱 NL - ss 99
+  - 🇳🇱 NL - hysteria2 100
+  - 🇳🇱 NL - hysteria2 101
+  - 🇳🇱 NL - hysteria2 102
+  - 🇳🇱 NL - hysteria2 103
+  - 🇳🇱 NL - hysteria2 104
+  - 🇳🇱 NL - ss 105
+  - 🇳🇱 NL - ss 106
+  - 🇳🇱 NL - ss 107
+  - 🇳🇱 NL - ss 108
+  - 🇳🇱 NL - ss 109
+  - 🇳🇱 NL - ss 110
+  - 🇳🇱 NL - ss 111
+  - 🇳🇱 NL - ss 112
+  - 🇵🇱 PL - hysteria2 113
+  - 🇵🇱 PL - hysteria2 114
+  - 🇵🇱 PL - vless 115
+  - 🇸🇬 SG - ss 116
+  - 🇸🇬 SG - ss 117
+  - 🇸🇬 SG - ss 118
+  - 🇸🇬 SG - vmess 119
+  - 🇸🇬 SG - vmess 120
+  - 🇸🇬 SG - hysteria2 121
+  - 🇸🇬 SG - trojan 122
   - 🇸🇬 SG - vless 123
-  - 🇸🇬 SG - hysteria2 124
+  - 🇸🇬 SG - vmess 124
   - 🇸🇬 SG - trojan 125
   - 🇸🇬 SG - trojan 126
-  - 🇸🇬 SG - vless 127
-  - 🇸🇬 SG - vless 128
+  - 🇸🇬 SG - trojan 127
+  - 🇸🇬 SG - trojan 128
   - 🇸🇬 SG - trojan 129
   - 🇸🇬 SG - vless 130
   - 🇸🇬 SG - vless 131
-  - 🇸🇬 SG - hysteria2 132
-  - 🇹🇭 TH - vmess 133
-  - 🇹🇭 TH - ss 134
+  - 🇸🇬 SG - trojan 132
+  - 🇸🇬 SG - trojan 133
+  - 🇸🇬 SG - trojan 134
+  - 🇸🇬 SG - trojan 135
+  - 🇸🇬 SG - trojan 136
+  - 🇸🇬 SG - trojan 137
+  - 🇸🇬 SG - vless 138
+  - 🇸🇬 SG - hysteria2 139
+  - 🇸🇬 SG - ss 140
+  - 🇸🇬 SG - vless 141
+  - 🇸🇬 SG - vless 142
+  - 🇸🇬 SG - vless 143
+  - 🇸🇬 SG - trojan 144
+  - 🇸🇬 SG - vless 145
+  - 🇸🇬 SG - vless 146
+  - 🇸🇬 SG - vless 147
+  - 🇸🇬 SG - hysteria2 148
+  - 🇹🇭 TH - ss 149
+  - 🇹🇭 TH - vmess 150
+  - 🇹🇭 TH - ss 151
 rules:
 - GEOIP,LAN,DIRECT
 - MATCH,PROXIES
